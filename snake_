@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+  stack<char>s;
+   while(n--)
+   {
+       int a;
+       cin>>a;
+       string str;
+       cin>>str;
+       int flag=1;
+       for(int i=0;i<a;i++)
+       {
+           if(str[i]=='H')
+           {
+               if(s.empty())
+               {
+                   s.push(str[i]);
+               }
+               else
+               {
+                   cout<<"Invalid"<<endl;
+                   flag=0;
+                   break;
+               }
+          }
+           else if(str[i]=='T')
+           {   
+               if(s.empty())
+               {
+                  cout<<"Invalid"<<endl;
+                  flag=0;
+                   break;
+               }
+               else
+               {
+                   s.pop();
+               }
+           }
+      }
+       if(flag)
+       {  
+        if(s.empty())
+       {
+           cout<<"Valid"<<endl;
+       }
+         else
+      {
+          cout<<"Invalid"<<endl;
+      }
+       }
+     
+  }
+}
